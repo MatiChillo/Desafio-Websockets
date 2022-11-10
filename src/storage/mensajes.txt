@@ -1,0 +1,10 @@
+[
+  {
+    "email": "asd.qwe@gmail.com",
+    "message": "hola!"
+  },
+  {
+    "email": "matias@yahoo.com.ar",
+    "message": "hola, si?"
+  }
+]

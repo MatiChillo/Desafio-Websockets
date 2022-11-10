@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        h1{
+            color: blue;
+        }
+
+        label{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <h1>Vista de Productos</h1>
+                <br>
+                <% if(products.length == 0) {%>
+                    <h3 class="alert alert-warning" role="alert">No hay productos</h2>
+                    <br>
+                    <br>
+                <% }else {%>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Foto URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach(i => { %>
+                                <tr>
+                                    <td> <%= i.name %> </td>
+                                    <td> <%= i.price %> </td>
+                                    <td><img src=<%= i.photo %> alt="" height=50 width=50></img></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                <% } %>
+              <a href="/" class="btn btn-primary">Formulario</a>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+      <script src="socket.io/socket.io.js"></script>
+      <script src="main.js"></script> 
+</body>
+</html>

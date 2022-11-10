@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        h1{
+            color: blue;
+        }
+
+        label{
+            font-weight: bold;
+        }
+        p{
+            color: blue;
+            font-weight: bold;
+        }
+        time{
+            color: brown;
+            font-weight: normal;
+        }
+        data{
+            color: green;
+            font-style: italic;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <h1>Ingrese Producto</h1>
+                <br>
+                <form method="GET" action="/" >
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                      <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Precio</label>
+                      <input type="number" name="price" class="form-control" id="price">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                      <label class="form-label" for="exampleInputPassword1">Foto URL</label>
+                      <input type="url" name="photo" class="form-control" id="photo">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" onClick="sendNewProduct()">Enviar</button>
+                    <a href="/productos" class="btn btn-primary">Productos</a>
+                  </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <h1>Lista de Productos</h1>
+            <br>
+                <table class="table table-dark table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Foto URL</th>
+                    </tr>
+                    </thead>
+                    <tbody id="productList">
+                        <!-- <%# products.forEach(i => { %>
+                            <tr id="productList">
+                                <th scope="row">1</th>
+                                <td> <%#= i.name %> </td>
+                                <td> <%#= i.price %> </td>
+                                <td><img src=<%#= i.photo %> alt="" height=50 width=50></img></td>
+                            </tr>
+                        <%# }); %> -->
+                    </tbody>
+                </table>
+          </div>
+          <div class="col"></div>
+      </div>
+  </div>
+  <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <h1>Centro de Mensajes</h1>
+            <br>
+            <input type="email" id="email" placeholder="Email">
+            <br>
+            <br>
+            <p id="messageList"></p>
+            <input type="text" placeholder="Ingrese mensage" id="message">
+            <br>
+            <br>
+            <button onClick="sendNewMessage()" type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div class="col"></div>
+      </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+    <script src="socket.io/socket.io.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
